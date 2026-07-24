@@ -4,8 +4,8 @@
 
 **🇮🇷 فارسی (صفحهٔ فعلی)**  ❘  [🇬🇧 Read in English](README.en.md)
 
-[![فارسی](https://img.shields.io/badge/فارسی-صفحهٔ%20فعلی-239120?style=for-the-badge)](README.md)
-[![English](https://img.shields.io/badge/English-Click%20Here-lightgrey?style=for-the-badge&logo=googletranslate&logoColor=white)](README.en.md)
+[![Persian](https://img.shields.io/badge/PERSIAN-Current%20Page-239120?style=for-the-badge&logo=googletranslate&logoColor=white)](README.md)
+[![English](https://img.shields.io/badge/ENGLISH-Click%20Here-555555?style=for-the-badge&logo=googletranslate&logoColor=white)](README.en.md)
 
 ---
 
@@ -19,8 +19,8 @@
 [![PHP](https://img.shields.io/badge/PHP-7.4%2B-777BB4?logo=php&logoColor=white)](https://www.php.net/)
 [![License](https://img.shields.io/badge/License-GPL--2.0--or--later-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-1.1.0-success.svg)](CHANGELOG.md)
-[![RTL](https://img.shields.io/badge/رابط%20کاربری-فارسی%20و%20انگلیسی-orange.svg)](#-رابط-کاربری-دوزبانه-فارسی--انگلیسی)
-[![PRs Welcome](https://img.shields.io/badge/مشارکت-استقبال%20می‌کنیم-brightgreen.svg)](CONTRIBUTING.md)
+[![RTL](https://img.shields.io/badge/UI-Persian%20%2F%20English%20%28RTL%29-orange.svg)](#-رابط-کاربری-دوزبانه-فارسی--انگلیسی)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 [امکانات](#-امکانات) • [نصب](#-نصب) • [راهنمای استفاده](#-راهنمای-استفاده) • [تنظیمات](#️-تنظیمات) • [سوالات متداول](#-سوالات-متداول)
 
