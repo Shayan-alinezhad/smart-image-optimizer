@@ -1,0 +1,26 @@
+# Files and folders excluded from the distributed plugin ZIP.
+.git
+.github
+.gitignore
+.distignore
+.editorconfig
+.DS_Store
+build
+dist
+release
+node_modules
+vendor
+composer.json
+composer.lock
+phpcs.xml
+phpcs-report.xml
+package.json
+package-lock.json
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
+SECURITY.md
+README.md
+README-FA.md
+GITHUB-GUIDE-FA.md
+*.zip
+*.log

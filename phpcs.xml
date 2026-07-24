@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<ruleset name="Cloner Smart Image Optimizer">
+
+	<description>WordPress Coding Standards for the Smart Image Optimizer plugin.</description>
+
+	<!-- Scan the whole plugin. -->
+	<file>.</file>
+
+	<!-- Exclude non-source directories. -->
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/build/*</exclude-pattern>
+	<exclude-pattern>*/dist/*</exclude-pattern>
+	<exclude-pattern>*/languages/*</exclude-pattern>
+	<exclude-pattern>*.min.js</exclude-pattern>
+	<exclude-pattern>*.min.css</exclude-pattern>
+
+	<!-- Command line defaults. -->
+	<arg name="extensions" value="php"/>
+	<arg name="basepath" value="."/>
+	<arg name="parallel" value="8"/>
+	<arg name="colors"/>
+	<arg value="sp"/>
+
+	<!-- WordPress standards. -->
+	<rule ref="WordPress">
+		<!-- Namespaced class files use class-{name}.php, which WPCS flags. -->
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
+	</rule>
+
+	<!-- Enforce the plugin prefix on globals. -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="sio"/>
+				<element value="SIO"/>
+				<element value="SmartImageOptimizer"/>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- Enforce a single text domain. -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="smart-image-optimizer"/>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- Minimum supported WordPress version. -->
+	<config name="minimum_wp_version" value="5.6"/>
+
+	<!-- PHP cross-version compatibility. -->
+	<config name="testVersion" value="7.4-"/>
+	<rule ref="PHPCompatibilityWP"/>
+
+</ruleset>

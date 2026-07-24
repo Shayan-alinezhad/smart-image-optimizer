@@ -1,0 +1,59 @@
+name: Build Release ZIP
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build and publish plugin ZIP
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Read version from tag
+        id: version
+        run: echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Build distributable plugin folder
+        run: |
+          set -e
+          mkdir -p build/smart-image-optimizer
+          rsync -av \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='build' \
+            --exclude='vendor' \
+            --exclude='node_modules' \
+            --exclude='.gitignore' \
+            --exclude='.distignore' \
+            --exclude='.editorconfig' \
+            --exclude='composer.json' \
+            --exclude='composer.lock' \
+            --exclude='phpcs.xml' \
+            --exclude='CONTRIBUTING.md' \
+            --exclude='CODE_OF_CONDUCT.md' \
+            --exclude='SECURITY.md' \
+            --exclude='*.zip' \
+            ./ build/smart-image-optimizer/
+
+      - name: Create ZIP archive
+        run: |
+          cd build
+          zip -r "../smart-image-optimizer-${{ steps.version.outputs.version }}.zip" smart-image-optimizer
+          cd ..
+          ls -lh *.zip
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "v${{ steps.version.outputs.version }}"
+          generate_release_notes: true
+          files: smart-image-optimizer-${{ steps.version.outputs.version }}.zip

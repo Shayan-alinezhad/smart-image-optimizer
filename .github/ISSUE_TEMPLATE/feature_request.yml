@@ -1,0 +1,61 @@
+name: "\U00002728 Feature Request"
+description: Suggest a new feature or improvement
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for suggesting an improvement!
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Preflight checklist
+      options:
+        - label: I have searched existing issues and this is not a duplicate
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: A clear description of the problem or limitation you are hitting.
+      placeholder: "I'm always frustrated when ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: Describe what you would like to happen.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any other approaches or workarounds you have tried.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which area does this affect?
+      options:
+        - Optimization engine (resize / compress / WebP)
+        - Bulk optimization
+        - Media Library integration
+        - Settings page
+        - Logging
+        - Dashboard widget
+        - Translations / RTL
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Mockups, links or examples from other plugins.

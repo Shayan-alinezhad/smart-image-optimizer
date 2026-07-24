@@ -1,0 +1,450 @@
+# Copyright (C) 2026 Cloner (Shayan) - https://clonerr.ir
+# This file is distributed under the GPLv2 or later.
+#
+# A ready-to-use Persian translation is bundled as languages/fa.php and is
+# applied instantly by the built-in language switcher, so no .mo compilation
+# is required for Persian. Use this POT to add other languages.
+msgid ""
+msgstr ""
+"Project-Id-Version: Cloner Smart Image Optimizer & Auto WebP 1.1.0\n"
+"Report-Msgid-Bugs-To: https://clonerr.ir\n"
+"Last-Translator: Cloner <https://clonerr.ir>\n"
+"Language-Team: Cloner <https://clonerr.ir>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-07-24T00:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: Cloner Smart Image Optimizer\n"
+"X-Domain: smart-image-optimizer\n"
+
+msgid "Smart Image Optimizer & Auto WebP"
+msgstr ""
+
+msgid "Image Optimizer"
+msgstr ""
+
+msgid "Cloner Image Optimizer"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Logs"
+msgstr ""
+
+msgid "Bulk Optimize"
+msgstr ""
+
+msgid "Bulk Optimize Images"
+msgstr ""
+
+msgid "Optimization"
+msgstr ""
+
+msgid "Image Optimization"
+msgstr ""
+
+msgid "Optimization Logs"
+msgstr ""
+
+#. Language switcher
+msgid "Language"
+msgstr ""
+
+msgid "Interface Language"
+msgstr ""
+
+msgid "Follow site language"
+msgstr ""
+
+msgid "Switch to English"
+msgstr ""
+
+msgid "Switch to Persian"
+msgstr ""
+
+msgid "Change the language of this plugin's admin pages. This does not affect the rest of your site."
+msgstr ""
+
+#. Media library column
+msgid "Not optimized"
+msgstr ""
+
+msgid "Original"
+msgstr ""
+
+msgid "Optimized"
+msgstr ""
+
+msgid "Saved"
+msgstr ""
+
+msgid "WebP"
+msgstr ""
+
+msgid "Resized"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "Optimize now"
+msgstr ""
+
+msgid "Re-optimize"
+msgstr ""
+
+msgid "Restore original"
+msgstr ""
+
+msgid "Image optimized successfully."
+msgstr ""
+
+msgid "Original image restored."
+msgstr ""
+
+msgid "The operation could not be completed. Check the logs for details."
+msgstr ""
+
+#. Settings: General
+msgid "General"
+msgstr ""
+
+msgid "Enable Plugin"
+msgstr ""
+
+msgid "Automatically optimize new uploads."
+msgstr ""
+
+msgid "Enable WebP"
+msgstr ""
+
+msgid "Generate a WebP version of each uploaded image."
+msgstr ""
+
+msgid "Enable Resize"
+msgstr ""
+
+msgid "Downscale images that exceed the maximum dimensions."
+msgstr ""
+
+msgid "Keep Originals"
+msgstr ""
+
+msgid "Back up the original file before optimizing. Disable to delete originals after a successful WebP conversion."
+msgstr ""
+
+msgid "Overwrite Existing"
+msgstr ""
+
+msgid "Re-optimize images that were already optimized."
+msgstr ""
+
+#. Settings: WebP & compression
+msgid "WebP & Compression"
+msgstr ""
+
+msgid "Quality"
+msgstr ""
+
+msgid "WebP / JPEG quality. 85 is a good balance of size and clarity."
+msgstr ""
+
+msgid "Lossless WebP"
+msgstr ""
+
+msgid "Use lossless WebP encoding (larger files, requires Imagick)."
+msgstr ""
+
+msgid "Strip Metadata"
+msgstr ""
+
+msgid "Remove unnecessary EXIF / metadata to reduce file size."
+msgstr ""
+
+msgid "Preserve Color Profile"
+msgstr ""
+
+msgid "Keep the ICC color profile when stripping metadata (Imagick)."
+msgstr ""
+
+msgid "Fix Orientation"
+msgstr ""
+
+msgid "Auto-rotate images based on EXIF orientation."
+msgstr ""
+
+#. Settings: Resize
+msgid "Resize"
+msgstr ""
+
+msgid "Maximum Width (px)"
+msgstr ""
+
+msgid "Maximum Height (px)"
+msgstr ""
+
+msgid "Maintain Aspect Ratio"
+msgstr ""
+
+msgid "Prevent Upscaling"
+msgstr ""
+
+msgid "Only shrink images; never enlarge smaller ones."
+msgstr ""
+
+#. Settings: Advanced
+msgid "Advanced"
+msgstr ""
+
+msgid "Bulk Batch Size"
+msgstr ""
+
+msgid "How many images to process per request during bulk optimization."
+msgstr ""
+
+msgid "Skip Large Files (MB)"
+msgstr ""
+
+msgid "Skip images larger than this size. Set to 0 to disable the limit."
+msgstr ""
+
+msgid "Enable Logging"
+msgstr ""
+
+#. translators: %s: logs page URL
+msgid "Record optimization activity. <a href=\"%s\">View logs</a>."
+msgstr ""
+
+msgid "Save Settings"
+msgstr ""
+
+msgid "Settings saved."
+msgstr ""
+
+#. Sidebar / capabilities
+msgid "Bulk Optimization"
+msgstr ""
+
+msgid "Optimize images that already exist in your media library."
+msgstr ""
+
+msgid "Open Bulk Optimizer"
+msgstr ""
+
+msgid "Server Capabilities"
+msgstr ""
+
+msgid "Imagick"
+msgstr ""
+
+msgid "GD"
+msgstr ""
+
+msgid "Available"
+msgstr ""
+
+msgid "Missing"
+msgstr ""
+
+msgid "WebP Encoding"
+msgstr ""
+
+msgid "Supported"
+msgstr ""
+
+msgid "Unsupported"
+msgstr ""
+
+msgid "WebP encoding is not available on this server. Images will still be resized and compressed, but not converted to WebP."
+msgstr ""
+
+#. Statistics
+msgid "Total Images"
+msgstr ""
+
+msgid "Optimized Images"
+msgstr ""
+
+msgid "Total Original Size"
+msgstr ""
+
+msgid "Total Optimized Size"
+msgstr ""
+
+msgid "Total Space Saved"
+msgstr ""
+
+msgid "Average Compression"
+msgstr ""
+
+msgid "Space Saved"
+msgstr ""
+
+msgid "Avg. Compression"
+msgstr ""
+
+#. Bulk page
+msgid "Run Bulk Optimization"
+msgstr ""
+
+msgid "Only images that have not been optimized yet"
+msgstr ""
+
+msgid "All images (re-optimize everything)"
+msgstr ""
+
+msgid "Start Optimization"
+msgstr ""
+
+msgid "Pause"
+msgstr ""
+
+msgid "Resume"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+#. Bulk JavaScript strings
+msgid "Scanning media library…"
+msgstr ""
+
+msgid "No images found to optimize."
+msgstr ""
+
+msgid "Starting…"
+msgstr ""
+
+#. translators: %1$d: current index, %2$d: total count
+msgid "Processing %1$d of %2$d…"
+msgstr ""
+
+msgid "Paused."
+msgstr ""
+
+msgid "Resuming…"
+msgstr ""
+
+msgid "Cancelled."
+msgstr ""
+
+#. translators: %1$d: image count, %2$s: human readable saved size
+msgid "All done! Optimized %1$d image(s), saved %2$s."
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Skipped"
+msgstr ""
+
+#. translators: %s: formatted remaining time
+msgid "Estimated time remaining: %s"
+msgstr ""
+
+msgid "calculating…"
+msgstr ""
+
+#. Logs page
+msgid "Logs cleared."
+msgstr ""
+
+msgid "Clear Logs"
+msgstr ""
+
+msgid "No log entries yet."
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Level"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "Context"
+msgstr ""
+
+#. Errors and notices
+msgid "You do not have permission to access this page."
+msgstr ""
+
+msgid "You do not have permission to do this."
+msgstr ""
+
+msgid "Insufficient permissions."
+msgstr ""
+
+msgid "Invalid attachment ID."
+msgstr ""
+
+msgid "Original restored."
+msgstr ""
+
+msgid "No backup is available for this image."
+msgstr ""
+
+msgid "Could not restore the original file."
+msgstr ""
+
+msgid "The plugin is disabled."
+msgstr ""
+
+msgid "Attachment is not an image."
+msgstr ""
+
+msgid "Unsupported image type."
+msgstr ""
+
+msgid "Image already optimized."
+msgstr ""
+
+msgid "Attachment file not found."
+msgstr ""
+
+msgid "Could not read image dimensions."
+msgstr ""
+
+msgid "Source file not found or unreadable."
+msgstr ""
+
+msgid "WebP file was not created."
+msgstr ""
+
+msgid "Optimized file was not created."
+msgstr ""
+
+msgid "BMP support requires the GD extension."
+msgstr ""
+
+msgid "Could not read the BMP image."
+msgstr ""
+
+msgid "Could not create a temporary BMP conversion."
+msgstr ""
+
+msgid "File is larger than the configured limit."
+msgstr ""
+
+#. Branding
+msgid "Developed by Cloner"
+msgstr ""
+
+msgid "Visit clonerr.ir"
+msgstr ""
+
+msgid "Support & Documentation"
+msgstr ""
+
+msgid "Version"
+msgstr ""

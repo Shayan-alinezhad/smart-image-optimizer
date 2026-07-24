@@ -1,0 +1,61 @@
+/**
+ * Smart Image Optimizer - RTL / Persian admin styles.
+ * Loaded only when the plugin UI language resolves to Persian.
+ *
+ * @author Cloner (Shayan)
+ * @link   https://clonerr.ir
+ */
+
+.sio-wrap.sio-rtl {
+	direction: rtl;
+	text-align: right;
+	font-family: Vazirmatn, "IRANSans", "Segoe UI", Tahoma, sans-serif;
+}
+
+.sio-wrap.sio-rtl .form-table th {
+	text-align: right;
+}
+
+.sio-wrap.sio-rtl .sio-title .dashicons {
+	margin-left: 6px;
+	margin-right: 0;
+}
+
+.sio-wrap.sio-rtl #sio-quality-value {
+	margin-left: 0;
+	margin-right: 10px;
+}
+
+.sio-wrap.sio-rtl .sio-switch input:checked + .sio-slider::before {
+	transform: translateX(-20px);
+}
+
+.sio-wrap.sio-rtl .sio-slider::before {
+	left: auto;
+	right: 3px;
+}
+
+.sio-wrap.sio-rtl .sio-progress__bar {
+	background: linear-gradient(270deg, #2271b1, #72aee6);
+	margin-right: 0;
+	margin-left: auto;
+	float: right;
+}
+
+.sio-wrap.sio-rtl .sio-log {
+	direction: ltr;
+	text-align: left;
+}
+
+.sio-wrap.sio-rtl .sio-log-table {
+	text-align: right;
+}
+
+.sio-wrap.sio-rtl .sio-brandbar__logo {
+	letter-spacing: 0;
+}
+
+/* Persian digits render better with slightly larger stat numbers. */
+.sio-wrap.sio-rtl .sio-stat__num {
+	font-size: 22px;
+}

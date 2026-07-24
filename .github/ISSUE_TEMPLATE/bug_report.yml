@@ -1,0 +1,127 @@
+name: "\U0001F41B Bug Report"
+description: Report a problem with the plugin
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill in as much detail as possible.
+
+        ⚠️ **Do not report security vulnerabilities here.** See [SECURITY.md](../blob/main/SECURITY.md).
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Preflight checklist
+      options:
+        - label: I have searched existing issues and this is not a duplicate
+          required: true
+        - label: I am using the latest version of the plugin
+          required: true
+        - label: I have tested with other plugins deactivated and a default theme
+          required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the bug
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Upload image '...'
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+      description: What actually happened?
+    validations:
+      required: true
+
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      placeholder: "1.1.0"
+    validations:
+      required: true
+
+  - type: input
+    id: wp-version
+    attributes:
+      label: WordPress version
+      placeholder: "6.6"
+    validations:
+      required: true
+
+  - type: input
+    id: php-version
+    attributes:
+      label: PHP version
+      placeholder: "8.2"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: image-library
+    attributes:
+      label: Image library in use
+      options:
+        - Imagick
+        - GD
+        - Not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: language
+    attributes:
+      label: Plugin interface language
+      options:
+        - English
+        - فارسی (Persian)
+        - Follow site language
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Plugin logs
+      description: Paste relevant entries from the plugin's Logs page.
+      render: shell
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Additional environment details
+      placeholder: |
+        - Hosting: shared / VPS / local
+        - Theme: Twenty Twenty-Four
+        - Other active plugins: ...
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Drag and drop any helpful screenshots here.

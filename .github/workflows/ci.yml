@@ -1,0 +1,98 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+jobs:
+  php-syntax:
+    name: PHP ${{ matrix.php }} syntax check
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php: [ '7.4', '8.0', '8.1', '8.2', '8.3' ]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup PHP ${{ matrix.php }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: gd, imagick, mbstring
+          coverage: none
+
+      - name: Lint all PHP files
+        run: |
+          find . -path ./vendor -prune -o -name '*.php' -print0 \
+            | xargs -0 -n1 -P4 php -l
+
+  coding-standards:
+    name: WordPress Coding Standards
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+          tools: composer, cs2pr
+
+      - name: Install Composer dependencies
+        run: composer install --prefer-dist --no-progress --no-interaction
+
+      - name: Run PHP_CodeSniffer
+        continue-on-error: true
+        run: vendor/bin/phpcs --report-full --report-checkstyle=./phpcs-report.xml
+
+      - name: Annotate the pull request
+        if: always()
+        run: cs2pr ./phpcs-report.xml
+        continue-on-error: true
+
+  plugin-check:
+    name: Repository health check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify required files exist
+        run: |
+          set -e
+          for f in smart-image-optimizer.php readme.txt README.md LICENSE CHANGELOG.md uninstall.php; do
+            if [ ! -f "$f" ]; then
+              echo "::error::Missing required file: $f"
+              exit 1
+            fi
+            echo "OK: $f"
+          done
+
+      - name: Verify version numbers are in sync
+        run: |
+          set -e
+          HEADER_VERSION=$(grep -m1 -oP '(?<=^ \* Version:)\s*\K[0-9.]+' smart-image-optimizer.php || true)
+          CONST_VERSION=$(grep -m1 -oP "SIO_VERSION',\s*'\K[0-9.]+" smart-image-optimizer.php || true)
+          README_VERSION=$(grep -m1 -oP '(?<=^Stable tag:)\s*\K[0-9.]+' readme.txt || true)
+
+          echo "Plugin header : $HEADER_VERSION"
+          echo "SIO_VERSION   : $CONST_VERSION"
+          echo "readme.txt    : $README_VERSION"
+
+          if [ "$HEADER_VERSION" != "$CONST_VERSION" ] || [ "$HEADER_VERSION" != "$README_VERSION" ]; then
+            echo "::error::Version mismatch between plugin header, SIO_VERSION and readme.txt"
+            exit 1
+          fi
+
+          echo "All versions are in sync: $HEADER_VERSION"

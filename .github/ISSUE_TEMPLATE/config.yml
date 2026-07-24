@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "\U0001F4AC Questions & Discussions"
+    url: https://github.com/Shayan-alinezhad/smart-image-optimizer/discussions
+    about: Ask questions and share ideas with the community.
+  - name: "\U0001F310 Official Support (clonerr.ir)"
+    url: https://clonerr.ir/support
+    about: Direct support from the developer.
+  - name: "\U0001F512 Report a Security Vulnerability"
+    url: https://github.com/Shayan-alinezhad/smart-image-optimizer/security/advisories/new
+    about: Please report security issues privately, never in public issues.

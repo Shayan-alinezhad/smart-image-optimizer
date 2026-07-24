@@ -1,0 +1,49 @@
+{
+	"name": "cloner/smart-image-optimizer",
+	"description": "Automatically resize, compress and convert WordPress Media Library uploads to WebP. Bulk optimization, backups, statistics, logging, and a built-in Persian/English switcher.",
+	"type": "wordpress-plugin",
+	"license": "GPL-2.0-or-later",
+	"keywords": [
+		"wordpress",
+		"plugin",
+		"images",
+		"webp",
+		"optimize",
+		"compress",
+		"resize",
+		"performance",
+		"persian",
+		"rtl"
+	],
+	"homepage": "https://clonerr.ir/smart-image-optimizer",
+	"authors": [
+		{
+			"name": "Cloner (Shayan)",
+			"homepage": "https://clonerr.ir",
+			"role": "Developer"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/Shayan-alinezhad/smart-image-optimizer/issues",
+		"source": "https://github.com/Shayan-alinezhad/smart-image-optimizer"
+	},
+	"require": {
+		"php": ">=7.4"
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "^3.9",
+		"wp-coding-standards/wpcs": "^3.1",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"scripts": {
+		"lint": "find . -path ./vendor -prune -o -name '*.php' -print0 | xargs -0 -n1 php -l",
+		"phpcs": "phpcs",
+		"phpcbf": "phpcbf"
+	}
+}

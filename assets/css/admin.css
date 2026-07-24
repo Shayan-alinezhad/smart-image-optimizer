@@ -1,0 +1,433 @@
+/**
+ * Smart Image Optimizer admin styles.
+ */
+
+.sio-wrap {
+	max-width: 1180px;
+}
+
+.sio-title {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 16px;
+}
+
+.sio-title .dashicons {
+	font-size: 28px;
+	width: 28px;
+	height: 28px;
+	color: #2271b1;
+}
+
+.sio-grid {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 20px;
+	align-items: start;
+}
+
+@media screen and (max-width: 960px) {
+	.sio-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.sio-card {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	padding: 16px 20px;
+	margin-bottom: 20px;
+	box-shadow: 0 1px 2px rgba( 0, 0, 0, 0.04 );
+}
+
+.sio-card h2 {
+	margin-top: 0;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #f0f0f1;
+	font-size: 16px;
+}
+
+/* Toggle switch */
+.sio-switch {
+	position: relative;
+	display: inline-block;
+	width: 44px;
+	height: 24px;
+	vertical-align: middle;
+}
+
+.sio-switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.sio-slider {
+	position: absolute;
+	cursor: pointer;
+	inset: 0;
+	background-color: #c3c4c7;
+	transition: 0.2s;
+	border-radius: 24px;
+}
+
+.sio-slider::before {
+	position: absolute;
+	content: "";
+	height: 18px;
+	width: 18px;
+	left: 3px;
+	bottom: 3px;
+	background-color: #fff;
+	transition: 0.2s;
+	border-radius: 50%;
+}
+
+.sio-switch input:checked + .sio-slider {
+	background-color: #2271b1;
+}
+
+.sio-switch input:checked + .sio-slider::before {
+	transform: translateX(20px);
+}
+
+.sio-switch input:disabled + .sio-slider {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+#sio-quality-value {
+	display: inline-block;
+	min-width: 32px;
+	margin-left: 10px;
+	font-weight: 600;
+	color: #2271b1;
+}
+
+/* Capabilities list */
+.sio-caps {
+	margin: 0;
+}
+
+.sio-caps li {
+	display: flex;
+	justify-content: space-between;
+	padding: 6px 0;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.sio-caps li:last-child {
+	border-bottom: 0;
+}
+
+.sio-ok {
+	color: #007017;
+}
+
+.sio-no {
+	color: #b32d2e;
+}
+
+/* Stats grid */
+.sio-stats-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 16px;
+}
+
+@media screen and (max-width: 782px) {
+	.sio-stats-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+.sio-stat {
+	text-align: center;
+	padding: 14px;
+	background: #f6f7f7;
+	border-radius: 8px;
+}
+
+.sio-stat__num {
+	display: block;
+	font-size: 24px;
+	font-weight: 700;
+	color: #1d2327;
+}
+
+.sio-stat__label {
+	display: block;
+	margin-top: 4px;
+	font-size: 12px;
+	color: #646970;
+}
+
+/* Actions */
+.sio-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 16px 0;
+}
+
+/* Progress bar */
+.sio-progress {
+	height: 22px;
+	background: #f0f0f1;
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.sio-progress__bar {
+	height: 100%;
+	width: 0;
+	background: linear-gradient(90deg, #2271b1, #72aee6);
+	transition: width 0.3s ease;
+}
+
+.sio-progress__meta {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 8px;
+	font-size: 13px;
+	color: #50575e;
+}
+
+.sio-status {
+	font-weight: 600;
+}
+
+/* Log output */
+.sio-log {
+	max-height: 280px;
+	overflow-y: auto;
+	background: #1d2327;
+	color: #dcdcde;
+	font-family: Menlo, Consolas, monospace;
+	font-size: 12px;
+	padding: 12px;
+	border-radius: 8px;
+	margin-top: 12px;
+}
+
+.sio-log__line {
+	padding: 2px 0;
+}
+
+.sio-log__line--error {
+	color: #ff8085;
+}
+
+.sio-log__line--skipped {
+	color: #dba617;
+}
+
+.sio-log__line--optimized {
+	color: #68de7c;
+}
+
+/* Media column */
+.sio-col__row {
+	display: flex;
+	justify-content: space-between;
+	gap: 8px;
+	font-size: 12px;
+	line-height: 1.6;
+}
+
+.sio-col__row span {
+	color: #646970;
+}
+
+.sio-saved {
+	color: #007017;
+}
+
+.sio-badge {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 10px;
+	font-size: 11px;
+}
+
+.sio-badge--pending {
+	background: #f0f0f1;
+	color: #646970;
+}
+
+/* Dashboard widget */
+.sio-widget__list {
+	margin: 0;
+}
+
+.sio-widget__list li {
+	display: flex;
+	justify-content: space-between;
+	padding: 6px 0;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.sio-widget__foot {
+	margin: 12px 0 0;
+}
+
+/* Logs table */
+.sio-log-clear {
+	margin-bottom: 12px;
+}
+
+.sio-level {
+	display: inline-block;
+	padding: 1px 8px;
+	border-radius: 8px;
+	font-size: 11px;
+	text-transform: uppercase;
+}
+
+.sio-level--info {
+	background: #e5f0fa;
+	color: #1a4d80;
+}
+
+.sio-level--warning {
+	background: #fcf3d8;
+	color: #8a6d1a;
+}
+
+.sio-level--error {
+	background: #fbeaea;
+	color: #b32d2e;
+}
+
+/* -------------------------------------------------------------------------
+ * Language switcher + Cloner branding (v1.1.0)
+ * Developed by Cloner - https://clonerr.ir
+ * ---------------------------------------------------------------------- */
+
+.sio-topbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin: 0 0 16px;
+}
+
+.sio-topbar .sio-title {
+	margin: 0;
+}
+
+.sio-langbar {
+	display: inline-flex;
+	align-items: center;
+	gap: 2px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 6px;
+	padding: 3px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+}
+
+.sio-langbar__label {
+	color: #787c82;
+	margin: 0 6px;
+	font-size: 18px;
+	width: 18px;
+	height: 18px;
+}
+
+.sio-langbtn {
+	display: inline-block;
+	padding: 5px 12px;
+	border-radius: 4px;
+	font-size: 13px;
+	line-height: 1.4;
+	text-decoration: none;
+	color: #2c3338;
+	transition: background .15s ease, color .15s ease;
+}
+
+.sio-langbtn:hover,
+.sio-langbtn:focus {
+	background: #f0f0f1;
+	color: #135e96;
+	box-shadow: none;
+}
+
+.sio-langbtn.is-active {
+	background: #2271b1;
+	color: #fff;
+	font-weight: 600;
+}
+
+.sio-langbtn.is-active:hover,
+.sio-langbtn.is-active:focus {
+	background: #135e96;
+	color: #fff;
+}
+
+/* Branding footer */
+.sio-brandbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 22px;
+	padding: 14px 18px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	font-size: 13px;
+	color: #50575e;
+}
+
+.sio-brandbar__left {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.sio-brandbar__logo {
+	display: inline-block;
+	padding: 4px 10px;
+	border-radius: 4px;
+	background: linear-gradient(135deg, #2271b1, #72aee6);
+	color: #fff;
+	font-weight: 700;
+	letter-spacing: .5px;
+}
+
+.sio-brandbar__right {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.sio-brandbar__right a {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.sio-brandbar__sep {
+	color: #c3c4c7;
+}
+
+@media screen and (max-width: 782px) {
+
+	.sio-topbar,
+	.sio-brandbar {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.sio-langbar {
+		width: 100%;
+		justify-content: center;
+	}
+}
